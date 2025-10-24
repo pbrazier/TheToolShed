@@ -21,6 +21,34 @@ TheToolShed/
 └── archive/              # Retired or reference material
 ```
 
+### Recommended Subfolder Structure
+
+Within each vendor directory (e.g., `aws/cli/`, `aws/terraform/`), organize content using these consistent subfolders:
+
+| Subfolder | Purpose |
+|-----------|---------|
+| `examples/` | Working mini-projects showing how to use a pattern or tool |
+| `templates/` | Clean, parameterized starting points ready to copy and adapt |
+| `modules/` | Logical Terraform components (networking, IAM, compute, etc.) |
+| `scripts/` | Generic automation scripts that glue everything together |
+| `validation/` | Scripts for quality and compliance (linting, policies, tagging checks) |
+
+Example structure:
+```
+aws/
+├── cli/
+│   ├── examples/         # Working CLI usage examples
+│   ├── templates/        # Reusable CLI script templates
+│   ├── scripts/          # Automation and helper scripts
+│   └── validation/       # CLI validation and testing scripts
+├── terraform/
+│   ├── examples/         # Complete Terraform deployments
+│   ├── templates/        # Starter Terraform configurations
+│   ├── modules/          # Reusable Terraform modules
+│   ├── scripts/          # Terraform automation scripts
+│   └── validation/       # Terraform linting and policy checks
+```
+
 ## Naming Conventions
 
 - **Directories**: Lowercase and hyphenated (`terraform-vpc-example`)

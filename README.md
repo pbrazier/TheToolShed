@@ -1,90 +1,52 @@
-# TheToolShed 🧰
+# TheToolShed
 
-A personal collection of deployment scripts, infrastructure templates, and automation examples built for AWS environments using **AWS CLI**, **Terraform**, and **Terragrunt**.
+> "If it saves time twice, it belongs in here."
 
-*TheToolShed* is where useful tools, snippets, and experiments live before they become production-ready. Think of it as a practical DevOps workbench: organised enough to find what you need, but still with that “shed” charm.
+A personal collection of deployment scripts, infrastructure templates, and automation examples built for AWS environments. This repository serves as a practical DevOps workbench that captures repeatable solutions, time-saving utilities, and deployment patterns.
 
----
+## Repository Structure
 
-## 🗂 Repository Structure
-
-```plaintext
+```
 TheToolShed/
-├── aws/
+├── aws/                  # AWS-specific tools and templates
 │   ├── cli/              # AWS CLI scripts and helper commands
 │   ├── terraform/        # Terraform modules, templates, and examples
 │   ├── terragrunt/       # Terragrunt configurations and patterns
 │   └── utilities/        # Validation, linting, and automation scripts
-│
 ├── shared/               # Cross-tool templates, pipelines, and scripts
-├── experiments/           # Proof-of-concepts, tests, and quick builds
-└── archive/               # Retired or reference material
+├── experiments/          # Proof-of-concepts, tests, and quick builds
+└── archive/              # Retired or reference material
 ```
 
-*Each directory includes its own README for context and usage examples.*
+## Subfolder Organization
 
----
+Each vendor directory follows a consistent structure for easy navigation:
 
-## ⚙️ Usage
+| Subfolder | Purpose | Example Content |
+|-----------|---------|-----------------|
+| `examples/` | Working mini-projects | Complete deployments, usage demos |
+| `templates/` | Clean starting points | Parameterized configs, boilerplate code |
+| `modules/` | Reusable components | Terraform modules, shared libraries |
+| `scripts/` | Automation tools | Deployment scripts, helper utilities |
+| `validation/` | Quality assurance | Linting, policy checks, testing tools |
 
-Clone the repository and explore any folder:
+## Quick Start
 
-```bash
-git clone https://github.com/<your-username>/TheToolShed.git
-cd TheToolShed
-```
+1. Browse the relevant vendor directory (`aws/`)
+2. Check the specific tool directory (`cli/`, `terraform/`, etc.)
+3. Look in `examples/` for working implementations
+4. Use `templates/` as starting points for new projects
+5. Leverage `scripts/` for automation needs
 
-Each sub-folder includes examples or templates with minimal setup requirements.  
-Use the `examples/` directories as working references, or copy templates to kick-start new deployments.
+## Target Audience
 
----
+- AWS Solutions Architects
+- DevOps Engineers
+- Infrastructure Engineers  
+- Cloud Engineers working with AWS
 
-## 🧩 Folder Overview
+Content assumes familiarity with AWS services, Terraform, and basic shell scripting.
 
-| Folder | Purpose | Example contents |
-|---------|----------|------------------|
-| `aws/cli/` | AWS CLI scripts and automation helpers | IAM audits, Control Tower enrolment, S3 lifecycle cleanup |
-| `aws/terraform/` | Terraform templates and reusable IaC modules | VPC, RDS, S3, and IAM configurations |
-| `aws/terragrunt/` | Terragrunt patterns for DRY deployments | Environment HCLs and multi-account orchestration |
-| `aws/utilities/` | Shell or Python utilities for validation and automation | Linting, tag validation, security checks |
-| `shared/` | Common resources used across clouds and tools | CI/CD templates, tagging policies, cross-account scripts |
-| `experiments/` | A space for testing and tinkering | EventBridge to Slack, LocalStack, AI tool integrations |
-| `archive/` | Old but occasionally useful content | Deprecated Terraform examples and scripts |
+## Contributing
 
----
-
-## 🧱 Naming and Standards
-
-- **Lowercase and hyphenated** directories (`terraform-vpc-example`)  
-- **README.md** in every main directory for clarity  
-- **Examples** show working usage  
-- **Templates** provide clean starting points  
-- **Scripts** use simple, self-documenting names (`assume-role.sh`, `cleanup-old-resources.sh`)  
-
----
-
-## 🧠 Philosophy
-
-> “If it saves time twice, it belongs in here.”
-
-This repository captures repeatable solutions, time-saving utilities, and deployment patterns that make cloud projects smoother. It’s equal parts toolkit, scratchpad, and archive.
-
----
-
-## 🚀 Future Additions
-
-- CI/CD pipeline templates for multi-account deployments  
-- Modular AWS Control Tower enrolment scripts  
-- Common validation workflows for Terraform and Terragrunt  
-- Cost analysis and tagging automation tools  
-
----
-
-## 🪴 Notes
-
-*TheToolShed* evolves as new challenges appear. Some tools may be experimental; others are hardened and ready to reuse.  
-Use, adapt, or extend anything here that helps you build faster and cleaner infrastructure.
-
----
-
-*Created and maintained by Paul Brazier — AWS Solutions Architect, tinkerer, and occasional Terraform whisperer.*
+Follow the established patterns and structure when adding new content. Each directory should include appropriate documentation and follow AWS best practices.
