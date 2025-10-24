@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Creates AWSControlTowerExecution role for Control Tower enrollment"
+
+Parameters:
+  ManagementAccountId:
+    Type: String
+    Description: "AWS Organizations Management Account ID"
+
+Resources:
+  AWSControlTowerExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: AWSControlTowerExecution
+      Description: "Role for AWS Control Tower to manage this account"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Ref ManagementAccountId
+              Service: controltower.amazonaws.com
+            Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+        - !Sub "arn:${AWS::Partition}:iam::aws:policy/AdministratorAccess"
+      Path: "/"
+
+Outputs:
+  RoleArn:
+    Description: "ARN of the created AWSControlTowerExecution role"
+    Value: !GetAtt AWSControlTowerExecutionRole.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-AWSControlTowerExecutionRoleArn"
+
+  RoleName:
+    Description: "Name of the created role"
+    Value: !Ref AWSControlTowerExecutionRole
+    Export:
+      Name: !Sub "${AWS::StackName}-AWSControlTowerExecutionRoleName"
